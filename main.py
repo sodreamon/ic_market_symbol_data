@@ -103,15 +103,15 @@ for _def_box in [0]:
                 db.session.commit()                
 
             else:
+                pass
+                # data_df = SymbolData.query.filter_by(symbol=symbol_exchange).first().data
 
-                data_df = SymbolData.query.filter_by(symbol=symbol_exchange).first().data
+            # data_df["CloseChange"] = data_df["Close"].diff()
 
-            data_df["CloseChange"] = data_df["Close"].diff()
+            # # data_df["PreCloseChange"] = data_df["CloseChange"].shift(1)
+            # data_df = data_df.dropna()
 
-            # data_df["PreCloseChange"] = data_df["CloseChange"].shift(1)
-            data_df = data_df.dropna()
-
-            df_dict[symbol_exchange] = data_df
+            # df_dict[symbol_exchange] = data_df
             count_n += 1
             print("\r", str(count_n).zfill(6), end="")
         print()
